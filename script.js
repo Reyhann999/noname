@@ -1,3 +1,5 @@
+const menu = ["Martabak Coklat", "Martabak Keju", "Pancake"];
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -39,3 +41,10 @@ const pancake = 15000;
 price[0].textContent = "Rp. " + martabakCoklat;
 price[1].textContent = "Rp. " + martabakKeju;
 price[2].textContent = "Rp. " + pancake;
+
+const cart = document.querySelector(".cart");
+
+function sumPrice(el) {
+  const id = Number(el.dataset.id);
+  cart.textContent = "halo, aku adalah " + menu[id];
+}

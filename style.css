@@ -14,11 +14,18 @@ a #logo {
 }
 
 .topnav {
+  position: sticky;
+  top: 0;
+  z-index: 988;
+  width: 100%;
+  transition: all 0.2s ease;
   background-color: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+ 
 
 .right-menu a {
   text-decoration: none;
@@ -50,8 +57,13 @@ a #logo {
 .prev, .next {
   cursor: pointer;
   position: absolute;
+  
   top: 50%;
-  width: auto;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
   margin-top: -22px;
   padding: 16px;
   font-weight: bold;
@@ -59,12 +71,18 @@ a #logo {
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  background-color: #ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,1);
   
 }
 
+.prev {
+  left: 20px;
+}
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  right: 20px;
+  
   
 }
 
@@ -173,4 +191,46 @@ img.menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  margin-bottom: 50px;
+}
+
+section.cart {
+  bottom: 0;
+  width: 90%;
+  height: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  background-color: rgba(100, 167, 176, 1);
+  z-index: 999;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.5s ease;
+  
+  
+}
+
+.cart-icon {
+  font-size: 50px;
+  color: aliceblue;
+}
+
+.cart-body {
+  overflow-y: auto;      /* scroll vertikal */
+  overflow-x: hidden;
+
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* saat cart dibuka */
+.cart.expanded .cart-body {
+  max-height: 220px;   /* tinggi maksimal cart */
+  opacity: 1;
+  transform: translateY(0);
 }

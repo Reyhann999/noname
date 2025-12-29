@@ -9,11 +9,11 @@
   </head>
   
   <body>
-    <div class="topnav" id="myTopnav">
+    <div class="topnav">
       <a href="#logo" ><img id="logo" src="img/reyhanz-logo.jpg"</a>
       <div class="right-menu">
         <a href="#home">Home</a>
-        <a href="#home"><span class="hamburger"><i class="fa-solid fa-burger"></i></span></a>
+        <a href="#card-menu"><span class="hamburger"><i class="fa-solid fa-burger"></i></span></a>
       </div>
     </div>
       
@@ -47,22 +47,21 @@
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
           
         </div>
-        
+        <br>
         <div style="text-align:center">
           <span class="dot" onclick="currentSlide(1)"></span>
           <span class="dot" onclick="currentSlide(2)"></span>
           <span class="dot" onclick="currentSlide(3)"></span>
-          <span class="dot" onclick="currentSlide(4)"></span>
         </div>
       </section>
       
-      <section class="card-menu">
+      <section class="card-menu" id="card-menu" style="margin-top:50px">
         <div class="card">
           <p>Martabak Coklat</p>
           <img class="menu" src="img/gambar-1.jpg">
           <div class="menu-bottom">
             <div class="price"></div>
-            <button onclick="sumPrice()">Buy</button>
+            <button onclick="sumPrice(this)" data-id="0">Buy</button>
           </div>
         </div>
         
@@ -71,7 +70,7 @@
           <img class="menu" src="img/gambar-2.jpg">
           <div class="menu-bottom">
             <div class="price"></div>
-            <button onclick="sumPrice()">Buy</button>
+            <button onclick="sumPrice(this)" data-id="1">Buy</button>
           </div>
         </div>
         
@@ -80,12 +79,21 @@
           <img class="menu" src="img/gambar-3.jpg">
           <div class="menu-bottom">
             <div class="price"></div>
-            <button onclick="sumPrice()">Buy</button>
+            <button onclick="sumPrice(this)" data-id="2">Buy</button>
           </div>
         </div>
       </section>
+      <section class="cart">
+        <div class="cart-header">
+          <input type="checkbox">
+          <label>Semua</label>
+          <button>&#9660</button>
+        </div>
+        <div class="cart-body">
+          
+        </div>
+      </section>
     <script src="script.js">
-      
     </script>
       
   </body>
