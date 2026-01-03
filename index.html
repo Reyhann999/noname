@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="refresh" content="30">
+    
   </head>
   
   <body>
@@ -85,15 +85,16 @@
         </div>
       </section>
       <section class="cart">
-        <div class="cart-header">
-          <input type="checkbox">
-          <label>Semua</label>
-          <button>&#9660</button>
-        </div>
-        <div class="cart-body">
+        <button class="triangle-down" onclick="expandCart()">&#9660</button>
+        <div class="cart-body" style="display:none">
           
         </div>
-        <p style="font-weight:700; text-align:right;">Total: <span class="total"></span></p>
+        <div class="cart-main">
+          
+          <input id="semua-item" type="checkbox" name="item">
+          <label for="semua-item">Semua</label>
+          <p style="font-weight:700; margin-left:auto">Total: <span class="total"></span></p>
+        </div>
       </section>
     <script src="script.js">
     </script>

@@ -197,11 +197,12 @@ img.menu {
 section.cart {
   bottom: 0;
   width: 90%;
-  height: 40px;
+  height: auto;
   left: 50%;
   transform: translateX(-50%);
   position: fixed;
-  background-color: rgba(100, 167, 176, 1);
+  background-color: #333;
+  color:#fff;
   z-index: 999;
   border-radius: 10px 10px 0 0;
   transition: all 0.5s ease;
@@ -209,28 +210,21 @@ section.cart {
   
 }
 
-.cart-icon {
-  font-size: 50px;
-  color: aliceblue;
+.cart-main {
+  display: flex;
+  width: 100%;
+  
 }
 
 .cart-body {
-  overflow-y: auto;      /* scroll vertikal */
-  overflow-x: hidden;
-
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(10px);
-
-  transition:
-    max-height 0.4s ease,
-    opacity 0.3s ease,
-    transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-/* saat cart dibuka */
-.cart.expanded .cart-body {
-  max-height: 220px;   /* tinggi maksimal cart */
-  opacity: 1;
-  transform: translateY(0);
+.triangle-down {
+  transform: rotate(0);
+}
+
+.triangle-down.expanded {
+  transform: rotate(180deg);
 }
